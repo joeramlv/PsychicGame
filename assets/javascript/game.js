@@ -19,7 +19,10 @@ document.onkeyup = function() {
     if (userguess === compGuess) {
         wins++; 
         document.getElementById("wins").innerHTML = wins;
-        
+        alert("Yo, you a Psychic");
+        guessesLeft = 9;
+        guessedLetters = [];
+        compGuess = choices[Math.floor(Math.random() * choices.length)];    
     } else {
         guessesLeft--;
         document.getElementById("guessesLeft").innerHTML = guessesLeft;
@@ -27,13 +30,13 @@ document.onkeyup = function() {
 
             guessedLetters[guessedLetters.length] = userguess; 
             document.getElementById("guessessofar").innerHTML = guessedLetters;
-    }if (guessesLeft === 0) {
+    }if (guessesLeft == 0) {
         losses++;
         document.getElementById("losses").innerHTML = losses;
-        alert("U Aint Psychic, you a Sidechick")
+        alert("U Aint Psychic, you a Sidechick");
         guessesLeft = 9;
-        
-        
+        guessedLetters = [];
+        compGuess = choices[Math.floor(Math.random() * choices.length)];    
 
     }
 }
